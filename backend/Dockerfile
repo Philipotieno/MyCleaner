@@ -1,5 +1,6 @@
 FROM python:3.8-slim-buster
 
+# Set the working directory inside the container to /backend
 WORKDIR /backend
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -9,6 +10,7 @@ ENV PYTHONBUFFERED 1
 RUN apt-get update \
   && apt-get -y install netcat gcc postgresql \
   && apt-get clean
+  
 # install python dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt /backend/requirements.txt
