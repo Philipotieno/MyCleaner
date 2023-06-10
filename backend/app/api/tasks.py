@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.app.db.tasks import close_db_connection, connect_to_db
+from app.db.tasks import close_db_connection, connect_to_db
 
 '''
 Used to wrap the startup and shutdown events for our app.
