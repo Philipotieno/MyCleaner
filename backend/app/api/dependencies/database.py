@@ -5,8 +5,6 @@ from databases import Database
 from fastapi import Depends
 from starlette.requests import Request
 
-from backend.app.db.repositories.base import BaseRepository
-
 
 def get_database(request: Request) -> Database:
     return request.app.state_._db

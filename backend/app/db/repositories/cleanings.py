@@ -1,5 +1,5 @@
-from backend.app.db.repositories.base import BaseRepository
-from backend.app.models.cleanings import CleaningCreate, CleaningInDB
+from app.db.repositories.base import BaseRepository
+from app.models.cleanings import CleaningCreate, CleaningInDB
 
 CREATE_CLEANING_QUERY = """
     INSERT INTO cleanings (name, description, price, cleaning_type)
@@ -7,7 +7,7 @@ CREATE_CLEANING_QUERY = """
     RETURNING id, name, description, price, cleaning_type;
 """
 
-class CleaningRepositry(BaseRepository):
+class CleaningsRepositry(BaseRepository):
     """All database actions associated with Cleaning resource
 
     Args:
